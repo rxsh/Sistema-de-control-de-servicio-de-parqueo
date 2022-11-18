@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block style_css %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}" />{% endblock %}
+{% block script %}<script src="{{ url_for('static', filename='js/login.js') }}" ></script>{% endblock %}
+
+{% block content %}
+<div id="login_content">
+    <h2>Por favor inicie sesión para continuar.</h2>
+    <br><br>
+    <form id="login_form" action="{{ url_for('login') }}" method='post' ><b>
+        <label><i class="fa fa-user"></i> Nombre de usuario<br><br><input type="text" name="username" required placeholder="Escriba aquí el nombre de usuario" /></label><br><br>
+        <label><i class="fa fa-key"></i> Contraseña de usuario<br><br><input type="password" name="password" required placeholder="Escriba aquí la contraseña" /></label><br><br>
+        <section id="buttonContainer" style="text-align: center; grid-area: button;"><button type="submit" id="submit" class="button"><i class="fas fa-file-export"></i> Enviar Formulario</button></section>
+    </form>
+</div>
+{% endblock %}
